@@ -2,6 +2,7 @@ import './GamePage.css';
 import React, {useState} from 'react'
 import { GameCard } from './components/GameCard';
 import { io } from 'socket.io-client';
+import { Link } from 'react-router-dom';
 
 
 const socket = io('http://localhost:5000');
@@ -50,6 +51,13 @@ const GamePage = () => {
   return (
     <div className="App">
       <div className="App-header">
+        <Link to="/">
+          <div onClick={
+            console.log("Player left")
+          }>
+            Leave Game
+          </div>
+        </Link>
         <h2 className="h2">Game Room</h2>
         <div className="table" id="table" z='1'>
             <div className='card card-p1' onClick={handleClickCard}><GameCard/></div>
