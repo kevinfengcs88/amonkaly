@@ -4,13 +4,13 @@ import React, {useState} from 'react'
 import { GameCard } from './components/GameCard';
 import { io } from 'socket.io-client';
 
-function GamePage() {
+const socket = io('http://localhost:5000');
+
+const GamePage = () => {
 
   const [player, setPlayer] = useState([]);
 
   const [toggleOn, setToggleOn] = useState(false);
-
-  const socket = io('http://localhost:5000');
 
   socket.on('connect', () => {
     socket.emit('socket-connection-event', socket.id);
