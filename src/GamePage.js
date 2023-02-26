@@ -66,8 +66,8 @@ const GamePage = () => {
             
             <div className='card card-p3' onClick={handleClickCard}><GameCard/></div>
 
-            {p1.map((cardSymbol) => (
-                <div className='card card-player' id={p1.length} z-index={p1.length+10}>
+            {p1.map((cardSymbol, index) => (
+                <div className='card card-player' id={index} z-index={index+10}>
                   <GameCard symbol={cardSymbol}/>
                 </div>
             ))}
