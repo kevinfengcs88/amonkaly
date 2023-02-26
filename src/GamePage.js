@@ -11,8 +11,6 @@ var curTurn = 1;
 const GamePage = () => {
   const [toggleOn, setToggleOn] = useState(false);
   
-  console.log(word_list);
-  
   socket.on('connect', () => {
     socket.emit('socket-connection-event', socket.id);
   });
@@ -23,7 +21,6 @@ const GamePage = () => {
   const [p4, setP4] = useState([]);
 
   const handleClickPile = () => {
-    console.log('cur turn here: ' + curTurn);
 
     const newWord = word_list[Math.floor(Math.random() * word_list.length)];
     const newCard = Math.floor(Math.random() * 5);

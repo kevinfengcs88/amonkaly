@@ -83,7 +83,7 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.5rem;
   justify-content: center;
-  /*transform: translateY(220%) translateX(-33%) rotate(-55deg);*/
+  transform: translateY(270%) translateX(0%) rotate(-55deg) scale(1.6);
 }
 
 .symbol{
