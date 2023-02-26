@@ -17,6 +17,10 @@
   color: #61dafb;
 }
 
+.h2{
+  color: #ff8c00
+}
+
 .joinButton {
   background-color: antiquewhite;
   border: none;
@@ -31,4 +35,41 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   color:white
 
+}
+
+.roomButton {
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 9999px;
+  font-size: calc(10px + 2vmin);
+  padding: 20px;
+}
+
+.roomButton:hover{
+  cursor: pointer;
+  background-color: #162647;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color:white
+
+}
+
+#room-ID{
+  border-radius: 25px;
+  background: antiquewhite;
+  padding: 20px;
+}
+
+body {
+  background-color: #333;
+  font-family: 'Luckiest Guy';
+  font-size: 100px;
+}
+
+path {
+  fill: transparent;
+}
+
+textPath {
+  fill: #ff8c00;
+  font-size: 45px
 }
