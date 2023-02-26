@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './GamePage.css';
 import React, {useState} from 'react'
 import { GameCard } from './components/GameCard';
@@ -8,19 +7,10 @@ import { io } from 'socket.io-client';
 const socket = io('http://localhost:5000');
 
 const GamePage = () => {
-
-  const [player, setPlayer] = useState([]);
-
   const [toggleOn, setToggleOn] = useState(false);
-
 
   socket.on('connect', () => {
     socket.emit('socket-connection-event', socket.id);
-
-  });
-
-  socket.on('p1-turn', (info) => {
-    
   });
 
   const player = 1;
@@ -30,7 +20,7 @@ const GamePage = () => {
   const [p3, setP3] = useState([]);
   const [p4, setP4] = useState([]);
 
-  const players = [p1,p2,p3,p4];
+  //const players = [p1,p2,p3,p4];
 
   const handleClickPile = () => {
     socket.emit('deck-click-event', 'Deck was clicked');
@@ -49,15 +39,12 @@ const GamePage = () => {
       case 4:
         setP4(p4 => [...p4, newCard]);
         break;
-            
     }
-
-    setP1(p1 => [...p1, newCard]);
   }
 
   const handleClickCard = () => {
-    setPlayer(player => player.slice(0,-1));
-    console.log(player);
+    setP1(p1 => p1.slice(0,-1));
+    //console.log(player);
   }
 
   return (
@@ -71,8 +58,8 @@ const GamePage = () => {
             
             <div className='card card-p3' onClick={handleClickCard}><GameCard/></div>
 
-            {player.map((cardSymbol) => (
-                <div className='card card-p4' id={player.length} z-index={player.length+10}>
+            {p1.map((cardSymbol) => (
+                <div className='card card-player' id={p1.length} z-index={p1.length+10}>
                   <GameCard symbol={cardSymbol}/>
                 </div>
             ))}
