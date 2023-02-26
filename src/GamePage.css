@@ -18,9 +18,49 @@
 }
 
 .table{
-  height: 40vw;
-  width: 40vw;
+  height: 35vw;
+  width: 35vw;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  padding: 5vw;
+  position: relative;
+}
+
+.card{
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.card-p1{
+  top: 20%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.card-p2{
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.card-p3{
+  top: 80%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.card-p4{
+  top: 50%;
+  left: 80%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+
+.card-word{
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  justify-content: center;
 }
