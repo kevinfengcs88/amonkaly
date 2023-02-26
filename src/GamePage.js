@@ -79,12 +79,16 @@ const GamePage = () => {
   return (
     <div className="App">
       <div className="App-header">
-        <Link to="/">
-          <div>
-            Leave Game
-          </div>
-        </Link>
-        <h2 className="h2">Game Room</h2>
+        <div className='flex-box'>
+          <Link style={{textDecoration: "none", flexBasis: "10vw", padding: "10px"}} to="/">
+            <div style={{color: "#ff8c00" }} onClick={
+              console.log("Player left")
+            }>
+              Leave Game
+            </div>
+          </Link>
+          <h2 className="h2" style={{flexGrow: "0.845"}}>Game Room</h2>
+        </div>
         <div className="table" id="table" z='1'>
             {p1.map((cardInfo, index) => (
               <div className='card card-p1' z-index={index+10} onClick={() => handleClickCard(1)}>
