@@ -10,15 +10,17 @@ import { ReactComponent as Logo4 } from "../../assets/red-dots.svg";
 import { ReactComponent as Logo5 } from "../../assets/yellow-square.svg";
 
 const GameCard = ({
-    cardType, symbol
+    cardType, symbol, word
 }) => {
+
+    console.log('here:' + word);
 
     let design;
     const logos = [<Logo1 />, <Logo2 />, <Logo3 />, <Logo4 />, <Logo5 />];
 
     if (cardType != 'pile') {
         design = <div>
-            <div className='card-word'>Word</div>
+            <div className='card-word'>{word}</div>
             <br/><br/>
             <div>
                 <SvgIcon

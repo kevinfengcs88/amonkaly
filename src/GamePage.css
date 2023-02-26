@@ -46,19 +46,19 @@
 
 .card-p2{
   top: 50%;
-  left: 20%;
-  transform: translateY(-60%) translateX(-50%);
-}
-
-.card-p3{
-  top: 50%;
   left: 80%;
   transform: translateY(-60%) translateX(-50%);
 }
 
-.card-player{
+.card-p3{
   top: 80%;
   left: 50%;
+  transform: translateY(-60%) translateX(-50%);
+}
+
+.card-p4{
+  top: 50%;
+  left: 20%;
   transform: translateY(-50%) translateX(-50%) scale(1);
 }
 
