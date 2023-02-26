@@ -34,6 +34,10 @@
   display: flex;
 }
 
+.card:hover{
+  cursor:pointer;
+}
+
 .card-p1{
   top: 20%;
   left: 50%;
