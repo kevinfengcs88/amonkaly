@@ -15,21 +15,23 @@ const GameCard = ({
 
     let design;
     const logos = [<Logo1 />, <Logo2 />, <Logo3 />, <Logo4 />, <Logo5 />];
+    let rand = Math.floor(Math.random()*5);
 
     if (cardType != 'pile') {
         design = <div>
             <div className='card-word'>Word</div>
             <br/>
-            <div alignItems='center'>
+            <div>
                 <SvgIcon
                     className='symbol'
                     sx={{
                         borderColor: 'black'
                     }}>
-                    {logos[Math.floor(Math.random()*5)]}
+                    {logos[rand]}
                 </SvgIcon>
             </div>
         </div>
+        console.log('rand created: ' + rand);
     }
     else {
         design = <div className='card-back'>
