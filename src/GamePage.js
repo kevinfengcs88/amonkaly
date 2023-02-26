@@ -12,6 +12,7 @@ const GamePage = () => {
 
   const [toggleOn, setToggleOn] = useState(false);
 
+
   socket.on('connect', () => {
     socket.emit('socket-connection-event', socket.id);
   });
@@ -24,7 +25,8 @@ const GamePage = () => {
   }
 
   const handleClickCard = () => {
-    setPlayer(player => [...player.pop()]);
+    setPlayer(player => player.slice(0,-1));
+    console.log(player);
   }
 
   return (
@@ -32,9 +34,9 @@ const GamePage = () => {
       <div className="App-header">
         <h2 className="h2">Game Room</h2>
         <div className="table" id="table" z='1'>
-            {/* <div className='card card-p1'><GameCard/></div>
+            <div className='card card-p1'><GameCard/></div>
             <div className='card card-p2'><GameCard/></div>
-            <div className='card card-p3'><GameCard/></div> */}
+            <div className='card card-p3'><GameCard/></div>
             {console.log(player)}
             {player.map((cardSymbol) => (
                 <div className='card card-player' id={player.length} z-index={player.length+10} onClick={handleClickCard}>
