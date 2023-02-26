@@ -5,8 +5,10 @@ const io = require('socket.io')(5000, {
 });
 
 io.on('connection', socket => {
-    console.log(socket.id);
-    socket.on('custom-event', (number, string) => {
-        console.log(number, string);
-    })
+    socket.on('socket-connection-event', (socketID) => {
+        console.log('Socket connection established with ID: ' + socketID);
+    });
+    socket.on('deck-click-event', (string) => {
+        console.log(string);
+    });
 })

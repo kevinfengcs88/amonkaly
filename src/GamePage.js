@@ -2,12 +2,19 @@ import logo from './logo.svg';
 import './GamePage.css';
 import React, {useState} from 'react'
 import { GameCard } from './components/GameCard';
+import { io } from 'socket.io-client';
 
 function GamePage() {
   const [toggleOn, setToggleOn] = useState(false);
 
-  const handleClickPile = () => {
+  const socket = io('http://localhost:5000');
 
+  socket.on('connect', () => {
+    socket.emit('socket-connection-event', socket.id);
+  });
+
+  const handleClickPile = () => {
+    socket.emit('deck-click-event', 'Deck was clicked');
     const newCardDiv = document.createElement("div");
     const newCard = document.createElement("GameCard");
     newCardDiv.class = 'card card-player';
