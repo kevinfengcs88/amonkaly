@@ -10,12 +10,11 @@ import { ReactComponent as Logo4 } from "../../assets/red-dots.svg";
 import { ReactComponent as Logo5 } from "../../assets/yellow-square.svg";
 
 const GameCard = ({
-    cardType
+    cardType, symbol
 }) => {
 
     let design;
     const logos = [<Logo1 />, <Logo2 />, <Logo3 />, <Logo4 />, <Logo5 />];
-    let rand = Math.floor(Math.random()*5);
 
     if (cardType != 'pile') {
         design = <div>
@@ -27,11 +26,11 @@ const GameCard = ({
                     sx={{
                         borderColor: 'black'
                     }}>
-                    {logos[rand]}
+                    {logos[symbol]}
                 </SvgIcon>
             </div>
         </div>
-        console.log('rand created: ' + rand);
+        //console.log('rand created: ' + rand);
     }
     else {
         design = <div className='card-back'>
