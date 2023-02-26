@@ -8,17 +8,21 @@ import { io } from 'socket.io-client';
 let socket = io();
 
 function App() {
-  const [isConnected, setIsConnected] = useState(socket.connected);
+  // const [isConnected, setIsConnected] = useState(socket.connected);
+  const socket = io('http://localhost:5000');
   useEffect(()=> {
     socket.on('connect', () => {
-      setIsConnected(true);
+      // setIsConnected(true);
+      console.log('binturong');
     });
+
+    socket.emit('custom-event', 69, 'boye');
   
     socket.on('disconnect', () => {
-      setIsConnected(false);
+      // setIsConnected(false);
     });
   
-    console.log('Socket connection is: ' + isConnected);
+    // console.log('Socket connection is: ' + isConnected);
 
     return ()=> {
       socket.off('connect');
