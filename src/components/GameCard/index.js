@@ -20,7 +20,7 @@ const GameCard = ({
     if (cardType != 'pile') {
         design = <div>
             <div className='card-word'>Word</div>
-            <br/>
+            <br/><br/>
             <div>
                 <SvgIcon
                     className='symbol'
@@ -41,10 +41,10 @@ const GameCard = ({
 
     const card = <Container
         sx={{
-            p: 1.2,
+            p: 1.5,
             border: 2,
-            width: 120,
-            height: 150,
+            width: '12vw',
+            height: '16vw',
             borderRadius: 2.5,
             direction: 'column',
             borderColor: 'black',
